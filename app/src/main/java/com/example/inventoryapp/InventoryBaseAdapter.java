@@ -3,6 +3,7 @@ package com.example.inventoryapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -101,6 +102,10 @@ public class InventoryBaseAdapter extends BaseAdapter {
      * @param item The item for the notification.
      */
     private void sendNotification(Item item) {
+        SharedPreferences sharedPref = context.getSharedPreferences(context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        boolean showNotifications = sharedPref.getBoolean("showNotifications", false);
+        if (!showNotifications) return;
+
         String channelId = context.getString(R.string.channel_id);
 
         String message = String.format(

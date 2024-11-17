@@ -14,11 +14,12 @@
         android:layout_height="wrap_content"
         android:text="Logout" />
 
-        <Switch
-            android:id="@+id/notificationsToggle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Show notifications when warning exceeded" />
+    <Switch
+        android:id="@+id/notificationsToggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:checked="false"
+        android:text="Show notifications when warning exceeded" />
 
 </LinearLayout>

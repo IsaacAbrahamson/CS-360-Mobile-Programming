@@ -30,8 +30,7 @@ public class Login extends AppCompatActivity {
         // Don't let user log in if already logged in
         if (sharedPref.contains("userId")) {
             // Send user information to inventory page
-            SharedPreferences preferences = getSharedPreferences("User", MODE_PRIVATE);
-            long userId = preferences.getLong("userId", -1);
+            long userId = sharedPref.getLong("userId", -1);
 
             Intent intent = new Intent(context, Inventory.class);
             intent.putExtra("userId", userId);

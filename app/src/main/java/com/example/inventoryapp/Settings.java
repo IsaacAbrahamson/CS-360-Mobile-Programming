@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -15,10 +16,18 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Settings extends AppCompatActivity {
+    Context context;
+    SharedPreferences sharedPref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
+
+        context = getApplicationContext();
+        sharedPref = context.getSharedPreferences(context.getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        boolean showNotifications = sharedPref.getBoolean("showNotifications", false);
+
         setContentView(R.layout.activity_settings);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -29,7 +38,19 @@ public class Settings extends AppCompatActivity {
         Button logout = findViewById(R.id.logout);
         logout.setOnClickListener(this::handleLogout);
 
-        // TODO: Implement notificationsToggle functionality
+        Switch notificationsToggle = findViewById(R.id.notificationsToggle);
+        notificationsToggle.setChecked(showNotifications);
+        notificationsToggle.setOnClickListener(this::toggleNotifications);
+    }
+
+    /**
+     * Toggle whether to show notifications.
+     */
+    private void toggleNotifications(View view) {
+        boolean showNotifications = sharedPref.getBoolean("showNotifications", false);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putBoolean("showNotifications", !showNotifications);
+        editor.apply();
     }
 
     /**
@@ -37,7 +58,6 @@ public class Settings extends AppCompatActivity {
      */
     private void handleLogout(View view) {
         // Clear preferences
-        SharedPreferences sharedPref = getApplicationContext().getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.remove("userId");
         editor.apply();
