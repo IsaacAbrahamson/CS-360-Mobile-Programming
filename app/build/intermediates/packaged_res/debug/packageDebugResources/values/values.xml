@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="gray">#747474</color>
+    <color name="green">#50C878</color>
+    <color name="red">#FF0000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Inventory App</string>
+    <string name="channel_description">Manages your inventory</string>
+    <string name="channel_id">inventory-channel</string>
+    <string name="channel_name">Inventory App</string>
+    <style name="Base.Theme.InventoryApp" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.InventoryApp" parent="Base.Theme.InventoryApp"/>
+</resources>

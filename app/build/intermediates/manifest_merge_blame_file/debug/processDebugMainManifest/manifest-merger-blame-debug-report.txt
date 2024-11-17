@@ -1,0 +1,159 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.inventoryapp"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="34"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-feature
+11-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:5:5-7:36
+12        android:name="android.hardware.telephony"
+12-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:6:9-50
+13        android:required="false" />
+13-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:7:9-33
+14
+15    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+15-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:9:5-76
+15-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:9:22-74
+16
+17    <permission
+17-->[androidx.core:core:1.13.0] C:\Users\isaac\.gradle\caches\8.9\transforms\e944f210591b8996dbe32dd7cd156c76\transformed\core-1.13.0\AndroidManifest.xml:22:5-24:47
+18        android:name="com.example.inventoryapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+18-->[androidx.core:core:1.13.0] C:\Users\isaac\.gradle\caches\8.9\transforms\e944f210591b8996dbe32dd7cd156c76\transformed\core-1.13.0\AndroidManifest.xml:23:9-81
+19        android:protectionLevel="signature" />
+19-->[androidx.core:core:1.13.0] C:\Users\isaac\.gradle\caches\8.9\transforms\e944f210591b8996dbe32dd7cd156c76\transformed\core-1.13.0\AndroidManifest.xml:24:9-44
+20
+21    <uses-permission android:name="com.example.inventoryapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+21-->[androidx.core:core:1.13.0] C:\Users\isaac\.gradle\caches\8.9\transforms\e944f210591b8996dbe32dd7cd156c76\transformed\core-1.13.0\AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.13.0] C:\Users\isaac\.gradle\caches\8.9\transforms\e944f210591b8996dbe32dd7cd156c76\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
+22
+23    <application
+23-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:11:5-37:19
+24        android:allowBackup="true"
+24-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:12:9-35
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.13.0] C:\Users\isaac\.gradle\caches\8.9\transforms\e944f210591b8996dbe32dd7cd156c76\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
+26        android:dataExtractionRules="@xml/data_extraction_rules"
+26-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:13:9-65
+27        android:debuggable="true"
+28        android:extractNativeLibs="false"
+29        android:fullBackupContent="@xml/backup_rules"
+29-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:14:9-54
+30        android:icon="@mipmap/ic_launcher"
+30-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:15:9-43
+31        android:label="@string/app_name"
+31-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:16:9-41
+32        android:roundIcon="@mipmap/ic_launcher_round"
+32-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:17:9-54
+33        android:supportsRtl="true"
+33-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:18:9-35
+34        android:testOnly="true"
+35        android:theme="@style/Theme.InventoryApp" >
+35-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:19:9-50
+36        <activity
+36-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:20:9-22:40
+37            android:name="com.example.inventoryapp.InventoryDetail"
+37-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:21:13-44
+38            android:exported="false" />
+38-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:22:13-37
+39        <activity
+39-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:23:9-25:40
+40            android:name="com.example.inventoryapp.Inventory"
+40-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:24:13-38
+41            android:exported="false" />
+41-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:25:13-37
+42        <activity
+42-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:26:9-28:40
+43            android:name="com.example.inventoryapp.Register"
+43-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:27:13-37
+44            android:exported="false" />
+44-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:28:13-37
+45        <activity
+45-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:29:9-36:20
+46            android:name="com.example.inventoryapp.Login"
+46-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:30:13-34
+47            android:exported="true" >
+47-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:31:13-36
+48            <intent-filter>
+48-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:32:13-35:29
+49                <action android:name="android.intent.action.MAIN" />
+49-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:33:17-69
+49-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:33:25-66
+50
+51                <category android:name="android.intent.category.LAUNCHER" />
+51-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:34:17-77
+51-->C:\Users\isaac\Documents\CS-499\CS-360-Mobile-Programming\app\src\main\AndroidManifest.xml:34:27-74
+52            </intent-filter>
+53        </activity>
+54
+55        <provider
+55-->[androidx.emoji2:emoji2:1.2.0] C:\Users\isaac\.gradle\caches\8.9\transforms\8c079eb2905b87ff6beb9c8d3dc1b618\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+56            android:name="androidx.startup.InitializationProvider"
+56-->[androidx.emoji2:emoji2:1.2.0] C:\Users\isaac\.gradle\caches\8.9\transforms\8c079eb2905b87ff6beb9c8d3dc1b618\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+57            android:authorities="com.example.inventoryapp.androidx-startup"
+57-->[androidx.emoji2:emoji2:1.2.0] C:\Users\isaac\.gradle\caches\8.9\transforms\8c079eb2905b87ff6beb9c8d3dc1b618\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+58            android:exported="false" >
+58-->[androidx.emoji2:emoji2:1.2.0] C:\Users\isaac\.gradle\caches\8.9\transforms\8c079eb2905b87ff6beb9c8d3dc1b618\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+59            <meta-data
+59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\isaac\.gradle\caches\8.9\transforms\8c079eb2905b87ff6beb9c8d3dc1b618\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+60                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\isaac\.gradle\caches\8.9\transforms\8c079eb2905b87ff6beb9c8d3dc1b618\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+61                android:value="androidx.startup" />
+61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\isaac\.gradle\caches\8.9\transforms\8c079eb2905b87ff6beb9c8d3dc1b618\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+62            <meta-data
+62-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\isaac\.gradle\caches\8.9\transforms\7a7b332fa2a10be6f5d6d0287d611b08\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:29:13-31:52
+63                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+63-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\isaac\.gradle\caches\8.9\transforms\7a7b332fa2a10be6f5d6d0287d611b08\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:30:17-78
+64                android:value="androidx.startup" />
+64-->[androidx.lifecycle:lifecycle-process:2.6.2] C:\Users\isaac\.gradle\caches\8.9\transforms\7a7b332fa2a10be6f5d6d0287d611b08\transformed\lifecycle-process-2.6.2\AndroidManifest.xml:31:17-49
+65            <meta-data
+65-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+66                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+66-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+67                android:value="androidx.startup" />
+67-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+68        </provider>
+69
+70        <receiver
+70-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+71            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+71-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+72            android:directBootAware="false"
+72-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+73            android:enabled="true"
+73-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+74            android:exported="true"
+74-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+75            android:permission="android.permission.DUMP" >
+75-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+76            <intent-filter>
+76-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+77                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+77-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+78            </intent-filter>
+79            <intent-filter>
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+80                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+81            </intent-filter>
+82            <intent-filter>
+82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+83                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+84            </intent-filter>
+85            <intent-filter>
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+86                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\isaac\.gradle\caches\8.9\transforms\f61cbcdaea7210b7a7885ca0cc197bcc\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+87            </intent-filter>
+88        </receiver>
+89    </application>
+90
+91</manifest>

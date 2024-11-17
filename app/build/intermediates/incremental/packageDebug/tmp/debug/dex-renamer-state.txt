@@ -1,0 +1,10 @@
+#Sun Nov 17 11:07:15 EST 2024
+base.0=C\:\\Users\\isaac\\Documents\\CS-499\\CS-360-Mobile-Programming\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\isaac\\Documents\\CS-499\\CS-360-Mobile-Programming\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\isaac\\Documents\\CS-499\\CS-360-Mobile-Programming\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
+path.0=classes.dex
+path.1=0/classes.dex
+path.2=4/classes.dex
+renamed.0=classes.dex
+renamed.1=classes2.dex
+renamed.2=classes3.dex

@@ -3,6 +3,7 @@ package com.example.inventoryapp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
@@ -44,7 +47,6 @@ public class InventoryBaseAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        NotificationManager notificationManager = new NotificationManager(context);
         convertView = inflater.inflate(R.layout.activity_inventory_item, null);
         Item item = items.get(position);
 
@@ -53,9 +55,7 @@ public class InventoryBaseAdapter extends BaseAdapter {
         qty.setText(String.valueOf(item.qty));
         if (item.qty <= item.warning) {
             qty.setTextColor(ContextCompat.getColor(context, R.color.red));
-            // Send notification to user that quantity is exceeded warning
-            notificationManager.sendSmsNotification("Item " + item.name + "(#" + item.itemId + ")"
-                    + " quantity is less than the set warning level: " + item.warning);
+            sendNotification(item);
         } else {
             qty.setTextColor(ContextCompat.getColor(context, R.color.gray));
         }
@@ -87,6 +87,38 @@ public class InventoryBaseAdapter extends BaseAdapter {
 
         return convertView;
     }
+
+    /**
+     * Sends a push notification message to the user.
+     * @param item The item for the notification.
+     */
+    private void sendNotification(Item item) {
+        String channelId = context.getString(R.string.channel_id);
+
+        String message = String.format(
+                "Item %s (#%s) quantity is less than the set warning level: %s",
+                item.name,
+                item.itemId,
+                item.warning);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId)
+                .setSmallIcon(R.drawable.notification_icon)
+                .setContentTitle("Inventory Warning Exceeded")
+                .setContentText(message)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManagerCompat manager = NotificationManagerCompat.from(context);
+
+        int permission = ContextCompat.checkSelfPermission(context, android.Manifest.permission.POST_NOTIFICATIONS);
+        if (permission == PackageManager.PERMISSION_GRANTED) {
+            try {
+                manager.notify((int) item.itemId, builder.build());
+            } catch (Exception e) {
+                System.out.println("Notification error: " + e.getMessage());
+            }
+        }
+    }
+
 
     /**
      * Deletes and item from the database.

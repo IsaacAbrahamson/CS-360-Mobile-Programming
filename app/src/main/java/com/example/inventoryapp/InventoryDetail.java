@@ -27,6 +27,13 @@ public class InventoryDetail extends AppCompatActivity {
             return insets;
         });
 
+        createViews();
+    }
+
+    /**
+     * Adds all the required view elements to the page.
+     */
+    private void createViews() {
         // Get item information from other pages
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
