@@ -4,6 +4,10 @@
         "source": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-main-33:\\mipmap-anydpi\\ic_launcher_round.xml"
     },
     {
+        "merged": "com.example.inventoryapp-debug-31:/drawable_settings.png.flat",
+        "source": "com.example.inventoryapp-main-33:/drawable/settings.png"
+    },
+    {
         "merged": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-debug-31:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-main-33:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
@@ -40,6 +44,10 @@
         "source": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-main-33:\\drawable\\notification_icon.png"
     },
     {
+        "merged": "com.example.inventoryapp-debug-31:/layout_activity_settings.xml.flat",
+        "source": "com.example.inventoryapp-main-33:/layout/activity_settings.xml"
+    },
+    {
         "merged": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-debug-31:\\layout_activity_inventory_detail.xml.flat",
         "source": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-main-33:\\layout\\activity_inventory_detail.xml"
     },
@@ -58,10 +66,6 @@
     {
         "merged": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-debug-31:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-main-33:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.inventoryapp-debug-31:/layout_activity_inventory_item.xml.flat",
-        "source": "com.example.inventoryapp-main-33:/layout/activity_inventory_item.xml"
     },
     {
         "merged": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-debug-31:\\drawable_delete.xml.flat",
@@ -86,6 +90,10 @@
     {
         "merged": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-debug-31:\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-main-33:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.inventoryapp-debug-31:/layout_activity_inventory.xml.flat",
+        "source": "com.example.inventoryapp-main-33:/layout/activity_inventory.xml"
     },
     {
         "merged": "C:\\Users\\isaac\\.gradle\\daemon\\8.9\\com.example.inventoryapp-debug-31:\\mipmap-xxxhdpi_ic_launcher.webp.flat",

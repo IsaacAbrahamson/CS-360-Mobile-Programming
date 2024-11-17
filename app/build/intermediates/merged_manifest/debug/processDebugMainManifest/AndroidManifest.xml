@@ -43,6 +43,9 @@
             android:name="com.example.inventoryapp.Register"
             android:exported="false" />
         <activity
+            android:name="com.example.inventoryapp.Settings"
+            android:exported="false" />
+        <activity
             android:name="com.example.inventoryapp.Login"
             android:exported="true" >
             <intent-filter>

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -92,7 +93,7 @@ public class Inventory extends AppCompatActivity {
      */
     private void registerEventListeners() {
         Button addItem = findViewById(R.id.newItem);
-        addItem.setOnClickListener((View.OnClickListener) v -> {
+        addItem.setOnClickListener(v -> {
             // Send user information to inventory detail page
             Intent intent = new Intent(getApplicationContext(), InventoryDetail.class);
             intent.putExtra("isUpdate", false);
@@ -102,6 +103,12 @@ public class Inventory extends AppCompatActivity {
             intent.putExtra("qty", -1);
             intent.putExtra("name", "");
             intent.putExtra("warning", -1);
+            startActivity(intent);
+        });
+
+        ImageView settings = findViewById(R.id.settings);
+        settings.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), Settings.class);
             startActivity(intent);
         });
     }

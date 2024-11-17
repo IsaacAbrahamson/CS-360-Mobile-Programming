@@ -3098,6 +3098,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable settings
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3349,6 +3350,7 @@ id linear
 id listMode
 id list_item
 id login
+id logout
 id m3_side_sheet
 id main
 id marquee
@@ -3430,6 +3432,7 @@ id north
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id notificationsToggle
 id off
 id on
 id onInterceptTouchReturnSwipe
@@ -3504,6 +3507,7 @@ id search_voice_btn
 id select_dialog_listview
 id selected
 id selection_type
+id settings
 id sharedValueSet
 id sharedValueUnset
 id shortcut
@@ -3736,6 +3740,7 @@ layout activity_inventory_detail
 layout activity_inventory_item
 layout activity_login
 layout activity_register
+layout activity_settings
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3981,6 +3986,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string preference_file_key
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description

@@ -1,6 +1,8 @@
 package com.example.inventoryapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -15,27 +17,43 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Login extends AppCompatActivity {
+    private SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_login);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
-        Button login = findViewById(R.id.login);
-        login.setOnClickListener(v -> {
-            handleLogin();
-        });
+        Context context = getApplicationContext();
+        sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
 
-        TextView register = findViewById(R.id.register);
-        register.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), Register.class));
-        });
+        // Don't let user log in if already logged in
+        if (sharedPref.contains("userId")) {
+            // Send user information to inventory page
+            SharedPreferences preferences = getSharedPreferences("User", MODE_PRIVATE);
+            long userId = preferences.getLong("userId", -1);
+
+            Intent intent = new Intent(context, Inventory.class);
+            intent.putExtra("userId", userId);
+            startActivity(intent);
+        } else {
+            setContentView(R.layout.activity_login);
+            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
+                Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+                v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+                return insets;
+            });
+
+            Button login = findViewById(R.id.login);
+            login.setOnClickListener(v -> {
+                handleLogin();
+            });
+
+            TextView register = findViewById(R.id.register);
+            register.setOnClickListener(v -> {
+                startActivity(new Intent(context, Register.class));
+            });
+        }
     }
 
     /**
@@ -55,6 +73,11 @@ public class Login extends AppCompatActivity {
                 Alert.showAlert(this, "Invalid Credentials", "Your login credentials are incorrect. Please try again or create a new user.");
                 return;
             }
+
+            // Set user as logged in
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putLong("userId", userId);
+            editor.apply();
 
             // Send user information to inventory page
             Intent intent = new Intent(getApplicationContext(), Inventory.class);
