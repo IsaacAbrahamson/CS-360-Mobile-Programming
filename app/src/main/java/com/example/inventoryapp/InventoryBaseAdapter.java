@@ -4,11 +4,16 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.widget.BaseAdapter;
+import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -50,39 +55,42 @@ public class InventoryBaseAdapter extends BaseAdapter {
         convertView = inflater.inflate(R.layout.activity_inventory_item, null);
         Item item = items.get(position);
 
-        // Create the quantity with color based on warning
-        TextView qty = (TextView) convertView.findViewById(R.id.itemQty);
+        // Create the quantity
+        EditText qty = (EditText) convertView.findViewById(R.id.itemQty);
         qty.setText(String.valueOf(item.qty));
-        if (item.qty <= item.warning) {
-            qty.setTextColor(ContextCompat.getColor(context, R.color.red));
-            sendNotification(item);
-        } else {
-            qty.setTextColor(ContextCompat.getColor(context, R.color.gray));
-        }
+        qty.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                String numberText = v.getText().toString();
+                int newQty = Integer.parseInt(numberText.trim());
+
+                item.qty = newQty;
+                updateItem(item);
+                updateQtyWarning(item, qty);
+
+                return true;
+            }
+            return false;
+        });
+
+        updateQtyWarning(item, qty);
 
         // Create the name
-        TextView name = (TextView) convertView.findViewById(R.id.itemName);
+        EditText name = (EditText) convertView.findViewById(R.id.itemName);
         name.setText(item.name);
+        name.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_DONE) {
+                item.name = v.getText().toString();
+                updateItem(item);
+                return true;
+            }
+            return false;
+        });
 
         // Create the delete button
         ImageView delete = (ImageView) convertView.findViewById(R.id.itemDelete);
         delete.setImageResource(R.drawable.delete);
         delete.setOnClickListener(v -> {
             deleteItem(item);
-        });
-
-        // Setup the on click for editing
-        GridLayout gridLayout = convertView.findViewById(R.id.inventoryItem);
-        gridLayout.setOnClickListener(v -> {
-            // Send user information to inventory detail page
-            Intent intent = new Intent(context, InventoryDetail.class);
-            intent.putExtra("isUpdate", true);
-            intent.putExtra("itemId", item.itemId);
-            intent.putExtra("userId", item.userId);
-            intent.putExtra("qty", item.qty);
-            intent.putExtra("name", item.name);
-            intent.putExtra("warning", item.warning);
-            context.startActivity(intent);
         });
 
         return convertView;
@@ -119,6 +127,18 @@ public class InventoryBaseAdapter extends BaseAdapter {
         }
     }
 
+    /**
+     * Updates the quantity number input to be styled based on warning and sends a notification.
+     */
+    private void updateQtyWarning(Item item, EditText qty) {
+        if (item.qty <= item.warning) {
+            qty.setTextColor(ContextCompat.getColor(context, R.color.red));
+            sendNotification(item);
+        } else {
+            qty.setTextColor(ContextCompat.getColor(context, R.color.gray));
+        }
+    }
+
 
     /**
      * Deletes and item from the database.
@@ -132,6 +152,19 @@ public class InventoryBaseAdapter extends BaseAdapter {
 
             // Reload the inventory page
             ((Activity) context).recreate();
+        } catch (Exception e) {
+            Log.e("Error:", e.getMessage(), e);
+        }
+    }
+
+    /**
+     * Updates the item in the inventory database
+     */
+    private void updateItem(Item item) {
+        try {
+            InventoryDatabase db = new InventoryDatabase(context, item.userId);
+            db.updateItem(item);
+            db.close();
         } catch (Exception e) {
             Log.e("Error:", e.getMessage(), e);
         }
